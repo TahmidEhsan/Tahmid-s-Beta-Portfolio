@@ -1,0 +1,22 @@
+// Pascal's Triangle Calculator
+#include <stdio.h>
+// Initializes function
+void p_triangle(int cycles){
+// Creates rows using a for loop
+for (int row_increment = 1; row_increment <=cycles; row_increment++){
+// Determines the values of each each column in each row
+int col_increment = 1;
+for (int i = 1; i <= row_increment; i++){
+printf("%4d", col_increment);
+col_increment = col_increment * (row_increment - i) / i;}
+printf("\n");
+}
+}
+int main(void)
+{
+// Program set to calculate 9 rows
+int cycles = 9;
+// Runs the program
+p_triangle(cycles);
+return 0;
+}
