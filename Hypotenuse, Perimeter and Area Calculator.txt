@@ -1,0 +1,27 @@
+// Hypotenuse, Perimeter and Area Calculator
+
+#include <stdio.h>
+int main(void)
+{
+// Declare all five variables
+float base, height, hypotenuse, perimeter, area;
+// Request an input for the base
+printf("Please enter a value for the base: ");
+scanf("%f", &base);
+// Request an input for the height
+printf("Please enter a value for the height: ");
+scanf("%f", &height);
+// Calculate the hypotenuse using the following algorithm:
+// hyp = sqrt(a^2 + b^2)
+hypotenuse = sqrt(pow(base,2) + pow(height,2));
+// Calculate the perimeter by adding all side lengths
+perimeter = base + height + hypotenuse;
+// Calculate the area by multiplying base times height divided by two
+area = (base * height)/2;
+// Print all calculated variables to one decimal point
+printf("Based on the given inputs, the hypotenuse is equal to: %.1f units \n",
+hypotenuse);
+printf("Based on the given inputs, the perimeter is equal to: %.1f units\n", perimeter);
+printf("Based on the given inputs, the area is equal to: %.1f units^2\n", area);
+return 0;
+}
