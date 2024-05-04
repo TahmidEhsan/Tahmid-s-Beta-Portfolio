@@ -1,0 +1,82 @@
+// Array Sorter
+
+#include <stdio.h>
+#include <stdlib.h>
+// Sorts integers in ascending order
+int intsorter(const void *num1, const void *num2) {
+return (*(int*)num1 - *(int*)num2);
+}
+// Sorts characters in ascending order
+char charsorter(const void *char1, const void *char2) {
+return (*(char*)char1 - *(char*)char2);
+}
+// Sorts doubles in descending order
+int doublesorter(const void *dub1, const void *dub2) {
+return (*(double*)dub2 - *(double*)dub1);
+}
+int main() {
+// Input requests for amount of integers, characters and
+// doubles that will be sorted
+int integers;
+printf("Please enter how many integers will be used in this array: ");
+scanf("%i", &integers);
+int characters;
+printf("Please enter how many characters will be used in this array: ");
+scanf("%i", &characters);
+int dubs;
+printf("Please enter how many doubles will be used in this array: ");
+scanf("%d", &dubs);
+// Define fixed-size arrays
+int intarray[integers];
+char chararray[characters];
+double dubarray[dubs];
+// Requests inputs for array values using for loops
+for (int i = 0; i < integers; i++) {
+printf("Please enter an integer value: ");
+scanf("%i", &intarray[i]);
+}
+for (int i = 0; i < characters; i++) {
+printf("Please enter a character: ");
+scanf(" %c", &chararray[i]); // Notice the space before %c to consume the newline
+character
+}
+while (getchar() != '\n');
+for (int i = 0; i < dubs; i++) {
+printf("Please enter a double value: ");
+scanf("%lf", &dubarray[i]);
+}
+// Prints arrays before and after being sorted using qsort
+printf("Before sorting, the int list is: ");
+for (int i = 0; i < integers; i++) {
+printf("%d ", intarray[i]);
+}
+printf("\n");
+qsort(intarray, integers, sizeof(int), intsorter);
+printf("After sorting the int list is: ");
+for (int i = 0; i < integers; i++) {
+printf("%d ", intarray[i]);
+}
+printf("\n");
+printf("Before sorting, the char list is: ");
+for (int i = 0; i < characters; i++) {
+printf("%c ", chararray[i]);
+}
+printf("\n");
+qsort(chararray, characters, sizeof(char), charsorter);
+printf("After sorting the char list is: ");
+for (int i = 0; i < characters; i++) {
+printf("%c ", chararray[i]);
+}
+printf("\n");
+printf("Before sorting, the double list is: ");
+for (int i = 0; i < dubs; i++) {
+printf("%lf ", dubarray[i]);
+}
+printf("\n");
+qsort(dubarray, dubs, sizeof(double), doublesorter);
+printf("After sorting the double list is: ");
+for (int i = 0; i < dubs; i++) {
+printf("%lf ", dubarray[i]);
+}
+return 0;
+}
