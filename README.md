@@ -1,0 +1,1 @@
+This repository is a collection of sample projects implemented in C, C++, and Python, designed to serve as a demonstration of my programming proficiency and versatility. Each project has been carefully crafted to highlight various aspects of programming, including algorithm implementation, problem-solving skills, and software development best practices.
