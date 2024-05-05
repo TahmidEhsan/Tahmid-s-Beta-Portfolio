@@ -1,0 +1,29 @@
+century19 = "q9Adatafile.txt"
+century20 = "q9Bdatafile.txt"
+century21 = "q9Cdatafile.txt"
+unset multiplot
+bar = 1
+
+set ylabel "Temperature"
+set ytics 2
+set key outside top right
+
+set multiplot layout 3,1
+
+set title "Land Average Temperature Comparison"
+set boxwidth bar
+plot century19 using ($1):2 with boxes lc rgb "blue" title "19th Century" fill solid, \
+     century20 using ($1):2 with boxes lc rgb "orange" title "20th Century" fill solid, \
+     century21 using ($1):2 with boxes lc rgb "red" title "21st Century" fill solid
+
+set title "Land Max Temperature Comparison"
+set boxwidth bar
+plot century19 using ($1):3 with boxes lc rgb "blue" title "19th Century" fill solid, \
+     century20 using ($1):3 with boxes lc rgb "orange" title "20th Century" fill solid, \
+     century21 using ($1):3 with boxes lc rgb "red" title "21st Century" fill solid
+
+set title "Land Min Temperature Comparison"
+set boxwidth bar
+plot century19 using ($1):1 with boxes lc rgb "blue" title "19th Century" fill solid, \
+     century20 using ($1):1 with boxes lc rgb "orange" title "20th Century" fill solid, \
+     century21 using ($1):1 with boxes lc rgb "red" title "21st Century" fill solid
