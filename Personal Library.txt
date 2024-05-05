@@ -1,0 +1,40 @@
+#ifndef MYLIBRARY_H
+#define MYLIBRARY_H
+#define ARRAY_SIZE 10
+float sumdiag(float array[ARRAY_SIZE][ARRAY_SIZE]) {
+float sum = 0;
+for (int i = 0; i < ARRAY_SIZE; i++) {
+sum += array[i][i];
+}
+return sum;
+}
+float sumall(float array[ARRAY_SIZE][ARRAY_SIZE]) {
+float sum = 0;
+for (int i = 0; i < ARRAY_SIZE; i++) {
+for (int j = 0; j < ARRAY_SIZE; j++) {
+sum += array[i][j];
+}
+}
+return sum;
+}
+float avright(float array[ARRAY_SIZE][ARRAY_SIZE]) {
+float sum = 0;
+for (int i = 0; i < ARRAY_SIZE; i++) {
+sum += array[i][ARRAY_SIZE - 1];
+}
+return sum / ARRAY_SIZE;
+}
+float corners(float array[ARRAY_SIZE][ARRAY_SIZE]) {
+return array[0][0] + array[0][ARRAY_SIZE - 1] + array[ARRAY_SIZE - 1][0] +
+array[ARRAY_SIZE - 1][ARRAY_SIZE - 1];
+}
+float largeanti(float array[ARRAY_SIZE][ARRAY_SIZE]) {
+float max = array[0][ARRAY_SIZE - 1];
+for (int i = 1; i < ARRAY_SIZE; i++) {
+if (array[i][ARRAY_SIZE - 1 - i] > max) {
+max = array[i][ARRAY_SIZE - 1 - i];
+}
+}
+return max;
+}
+#endif /* MYLIBRARY_H */
